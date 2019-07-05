@@ -16,7 +16,7 @@ router.post('/', (req, res, next) => {
     imageURL: imageUrl,
     location: {
       type: 'Point',
-      coordinates: latitude + longitude
+      coordinates: [latitude, longitude]
     }
   })
     .then(data => {
@@ -34,8 +34,5 @@ router.get('/api/places', (req, res) => {
       res.json(places)
     })
 })
-
-axios.get('http://localhost:3000/api/places')
-  .then
 
 module.exports = router;
